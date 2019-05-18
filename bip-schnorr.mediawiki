@@ -100,7 +100,7 @@ The following convention is used, with constants as defined for secp256k1:
 *** Let ''c = x<sup>3</sup> + 7 mod p''.
 *** Let ''y = c<sup>(p+1)/4</sup> mod p''.
 *** Fail if ''c &ne; y<sup>2</sup> mod p''.
-*** Return ''(r, y)''.
+*** Return the unique point ''P'' such that ''x(P) = x'' and ''y(P) = y''.
 ** The function ''point(x)'', where ''x'' is a 33-byte array, returns the point ''P'' for which ''x(P) = int(x[1:33])'' and ''y(P) & 1 = int(x[0:1]) - 0x02)'', or fails if no such point exists. The function  ''point(x)'' is equivalent to the following pseudocode:
 *** Fail if (''x[0:1] ≠ 0x02'' and ''x[0:1] ≠ 0x03'').
 *** Set flag ''odd'' if ''x[0:1] = 0x03''.
